@@ -1105,6 +1105,42 @@ window.sendMsg=function(){const q=input.value.trim();if(!q)return;messages.inner
 if(send)send.onclick=sendMsg;if(input)input.addEventListener("keydown",e=>{if(e.key==="Enter")sendMsg()});
 })();
 </script>
-<!-- CHEF BEN UPGRADE END --></body>
+<!-- CHEF BEN UPGRADE END --><script id="chef-ben-ai-fix">
+(function(){
+function initChefBenAI(){
+var input=document.getElementById("cbAiInput");
+var send=document.getElementById("cbAiSend");
+var messages=document.getElementById("cbAiMsg");
+if(!input||!send||!messages)return;
+var newSend=send.cloneNode(true);
+send.parentNode.replaceChild(newSend,send);
+window.sendMsg=function(){
+var q=input.value.trim();
+if(!q)return;
+var user=document.createElement("div");
+user.className="cb-msg cb-user";
+user.textContent=q;
+messages.appendChild(user);
+var bot=document.createElement("div");
+bot.className="cb-msg cb-bot";
+var l=q.toLowerCase();
+if(l.includes("private chef"))bot.textContent="Chef Ben offers private chef services for homes, Airbnb stays, private dinners and special occasions.";
+else if(l.includes("catering")||l.includes("wedding")||l.includes("event"))bot.textContent="Chef Ben provides catering for events, weddings, corporate functions and private occasions.";
+else if(l.includes("book")||l.includes("booking"))bot.textContent="Use the Book Chef Ben form on this website to send your enquiry directly to Chef Ben on WhatsApp.";
+else if(l.includes("ktn")||l.includes("pika"))bot.textContent="Chef Ben has been featured on KTN's Pika.";
+else if(l.includes("price")||l.includes("cost"))bot.textContent="For current pricing, please send a booking enquiry with your event details so Chef Ben can provide the appropriate quotation.";
+else bot.textContent="I can help with Chef Ben's private chef services, catering, bookings and KTN feature. Please ask me about one of these.";
+messages.appendChild(bot);
+input.value="";
+messages.scrollTop=messages.scrollHeight;
+};
+newSend.type="button";
+newSend.onclick=window.sendMsg;
+input.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();window.sendMsg();}};
+}
+if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initChefBenAI);else initChefBenAI();
+})();
+</script></body>
 </html>
+
 
