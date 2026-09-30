@@ -1090,7 +1090,7 @@ x.style.display=(x.style.display==="block")?"none":"block";
 <div class="cb-ai-msg" id="cbAiMsg"><div class="cb-msg cb-bot">Hello! I'm Chef Ben's website assistant. Ask me about private chef services, catering, bookings or the KTN feature.</div></div>
 <div class="cb-ai-input"><input id="cbAiInput" placeholder="Ask Chef Ben..."><button id="cbAiSend">Send</button></div>
 </div>
-<button type="button" class="cb-ai-toggle" id="cbAiToggle" style="position:relative;z-index:2147483647;cursor:pointer;pointer-events:auto;" onclick="var b=document.getElementById('cbAiBox');b.style.display=b.style.display==='block'?'none':'block';">Ask Chef Ben</button>
+<button type="button" class="cb-ai-toggle" id="cbAiToggle" style="position:fixed!important;right:20px!important;bottom:90px!important;z-index:2147483647!important;cursor:pointer!important;pointer-events:auto!important;" onclick="var b=document.getElementById('cbAiBox');b.style.display=b.style.display==='block'?'none':'block';">Ask Chef Ben</button>
 </div>
 
 <script>
@@ -1107,6 +1107,7 @@ if(send)send.onclick=sendMsg;if(input)input.addEventListener("keydown",e=>{if(e.
 </script>
 <!-- CHEF BEN UPGRADE END --><script src="chef-ben-assistant.js?v=3"></script></body>
 </html>
+
 
 
 
