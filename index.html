@@ -1102,7 +1102,7 @@
 <div class="cb-ai-msg" id="cbAiMsg"><div class="cb-msg cb-bot">Hello! I'm Chef Ben's website assistant. Ask me about private chef services, catering, bookings or the KTN feature.</div></div>
 <div class="cb-ai-input"><input id="cbAiInput" placeholder="Ask Chef Ben..."><button id="cbAiSend">Send</button></div>
 </div>
-<button class="cb-ai-toggle" id="cbAiToggle">Ask Chef Ben</button>
+<button type="button" class="cb-ai-toggle" id="cbAiToggle" style="position:relative;z-index:100000;cursor:pointer;pointer-events:auto;">Ask Chef Ben</button>
 </div>
 
 <script>
@@ -1117,8 +1117,9 @@ function sendMsg(){const q=input.value.trim();if(!q)return;messages.innerHTML+=`
 if(send)send.onclick=sendMsg;if(input)input.addEventListener("keydown",e=>{if(e.key==="Enter")sendMsg()});
 })();
 </script>
-<!-- CHEF BEN UPGRADE END --><script src="chef-ben-assistant.js"></script></body>
+<!-- CHEF BEN UPGRADE END --><script src="chef-ben-assistant.js"></script><script src="chef-ben-assistant.js?v=2"></script></body>
 </html>
+
 
 
 
