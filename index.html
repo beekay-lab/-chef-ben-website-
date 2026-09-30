@@ -1140,7 +1140,45 @@ input.onkeydown=function(e){if(e.key==="Enter"){e.preventDefault();window.sendMs
 }
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",initChefBenAI);else initChefBenAI();
 })();
+</script><script id="chef-ben-ai-final">
+(function(){
+document.addEventListener("click",function(e){
+var b=e.target.closest("#cbAiSend");
+if(!b)return;
+e.preventDefault();
+e.stopPropagation();
+var input=document.getElementById("cbAiInput"), box=document.getElementById("cbAiMsg");
+if(!input||!box)return;
+var q=input.value.trim();
+if(!q)return;
+var u=document.createElement("div");
+u.className="cb-msg cb-user";
+u.textContent=q;
+box.appendChild(u);
+var a=document.createElement("div");
+a.className="cb-msg cb-bot";
+var x=q.toLowerCase();
+if(x.indexOf("private chef")>=0)a.textContent="Chef Ben offers private chef services for homes, Airbnb stays, private dinners and special occasions.";
+else if(x.indexOf("catering")>=0||x.indexOf("wedding")>=0||x.indexOf("event")>=0)a.textContent="Chef Ben provides catering for events, weddings, corporate functions and private occasions.";
+else if(x.indexOf("book")>=0||x.indexOf("booking")>=0)a.textContent="Use the Book Chef Ben form on this website to send your enquiry directly to Chef Ben on WhatsApp.";
+else if(x.indexOf("ktn")>=0||x.indexOf("pika")>=0)a.textContent="Chef Ben has been featured on KTN's Pika.";
+else if(x.indexOf("price")>=0||x.indexOf("cost")>=0)a.textContent="For current pricing, please send a booking enquiry with your event details so Chef Ben can provide the appropriate quotation.";
+else a.textContent="I can help with Chef Ben's private chef services, catering, bookings and KTN feature. Please ask me about one of these.";
+box.appendChild(a);
+input.value="";
+box.scrollTop=box.scrollHeight;
+},true);
+document.addEventListener("keydown",function(e){
+if(e.key!=="Enter")return;
+if(document.activeElement&&document.activeElement.id==="cbAiInput"){
+e.preventDefault();
+var b=document.getElementById("cbAiSend");
+if(b)b.click();
+}
+},true);
+})();
 </script></body>
 </html>
+
 
 
