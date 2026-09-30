@@ -1088,7 +1088,7 @@ x.style.display=(x.style.display==="block")?"none":"block";
 <div class="cb-ai-box" id="cbAiBox">
 <div class="cb-ai-head">Chef Ben Assistant</div>
 <div class="cb-ai-msg" id="cbAiMsg"><div class="cb-msg cb-bot">Hello! I'm Chef Ben's website assistant. Ask me about private chef services, catering, bookings or the KTN feature.</div></div>
-<div class="cb-ai-input"><input id="cbAiInput" placeholder="Ask Chef Ben..."><button id="cbAiSend">Send</button></div>
+<div class="cb-ai-input"><input id="cbAiInput" placeholder="Ask Chef Ben..."><button type="button" id="cbAiSend" onclick="sendMsg()">Send</button></div>
 </div>
 <button type="button" class="cb-ai-toggle" id="cbAiToggle" style="position:fixed!important;right:20px!important;bottom:90px!important;z-index:2147483647!important;cursor:pointer!important;pointer-events:auto!important;" onclick="var b=document.getElementById('cbAiBox');b.style.display=b.style.display==='block'?'none':'block';">Ask Chef Ben</button>
 </div>
@@ -1101,28 +1101,10 @@ if(form){form.addEventListener("submit",function(e){e.preventDefault();const n=d
 const toggle=document.getElementById("cbAiToggle"),box=document.getElementById("cbAiBox"),input=document.getElementById("cbAiInput"),send=document.getElementById("cbAiSend"),messages=document.getElementById("cbAiMsg");
 if(toggle)toggle.onclick=()=>{box.style.display=box.style.display==="block"?"none":"block";};
 function answer(q){q=q.toLowerCase();if(q.includes("private chef"))return"Chef Ben offers private chef services for homes, Airbnb stays, private dinners and special occasions.";if(q.includes("catering")||q.includes("wedding")||q.includes("event"))return"Chef Ben provides catering for events, weddings, corporate functions and private occasions.";if(q.includes("book")||q.includes("booking"))return"Use the Book Chef Ben form on this website to send your enquiry directly to Chef Ben on WhatsApp.";if(q.includes("ktn")||q.includes("pika"))return"Chef Ben has been featured on KTN's Pika.";if(q.includes("price")||q.includes("cost"))return"For current pricing, please send a booking enquiry with your event details so Chef Ben can provide the appropriate quotation.";return"I can help with Chef Ben's private chef services, catering, bookings and KTN feature. Please ask me about one of these."}
-function sendMsg(){const q=input.value.trim();if(!q)return;messages.innerHTML+=`<div class="cb-msg cb-user">${q.replace(/</g,"&lt;")}</div>`;messages.innerHTML+=`<div class="cb-msg cb-bot">${answer(q)}</div>`;input.value="";messages.scrollTop=messages.scrollHeight}
+window.sendMsg=function(){const q=input.value.trim();if(!q)return;messages.innerHTML+=`<div class="cb-msg cb-user">${q.replace(/</g,"&lt;")}</div>`;messages.innerHTML+=`<div class="cb-msg cb-bot">${answer(q)}</div>`;input.value="";messages.scrollTop=messages.scrollHeight}
 if(send)send.onclick=sendMsg;if(input)input.addEventListener("keydown",e=>{if(e.key==="Enter")sendMsg()});
 })();
 </script>
 <!-- CHEF BEN UPGRADE END --></body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
