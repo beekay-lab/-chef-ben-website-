@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="css/style.css">
     <meta name="theme-color" content="#050505">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="stylesheet" href="chef-ben-upgrade.css"></head>
+</head>
 
 <body>
 
@@ -1030,9 +1030,96 @@
 <!-- CHEF BEN PREMIUM UPGRADE END -->
 
 <!-- CHEF BEN PREMIUM UPGRADE END -->
-<script src="chef-ben-upgrade.js"></script>
-</body>
+<link rel="stylesheet" href="chef-ben-upgrade.css"><!-- CHEF BEN UPGRADE START -->
+<div class="cb-upgrade">
+
+<section>
+<div class="cb-container">
+<div class="cb-private">
+<h2>Private Chef Experience</h2>
+<p>Chef Ben offers professional private chef services for homes, Airbnb stays, private dinners, celebrations and special occasions. Enjoy a personalised dining experience prepared and served with professional culinary care.</p>
+<a class="cb-btn cb-gold" href="#book-chef-ben">Book Chef Ben</a>
+</div>
+</div>
+</section>
+
+<section class="cb-ktn">
+<div class="cb-container">
+<div class="cb-title">
+<h2>Featured on KTN – Pika</h2>
+<p>Chef Ben has been featured on KTN's Pika, showcasing his culinary work and passion for food.</p>
+</div>
+<div class="cb-card">
+<strong>Chef Ben on KTN</strong>
+<p>Watch Chef Ben's culinary journey and selected videos below.</p>
+</div>
+</div>
+</section>
+
+<section>
+<div class="cb-container">
+<div class="cb-title">
+<h2>Chef Ben Videos</h2>
+<p>Explore Chef Ben's culinary work and experiences.</p>
+</div>
+<div class="cb-videos">
+<div class="cb-video"><video controls preload="metadata"><source src="videos/chef-ben-video-1.mp4" type="video/mp4"></video><div><strong>Chef Ben Video 1</strong></div></div>
+<div class="cb-video"><video controls preload="metadata"><source src="videos/chef-ben-video-2.mp4" type="video/mp4"></video><div><strong>Chef Ben Video 2</strong></div></div>
+<div class="cb-video"><video controls preload="metadata"><source src="videos/chef-ben-video-3.mp4" type="video/mp4"></video><div><strong>Chef Ben Video 3</strong></div></div>
+<div class="cb-video"><video controls preload="metadata"><source src="videos/chef-ben-video-4.mp4" type="video/mp4"></video><div><strong>Chef Ben Video 4</strong></div></div>
+<div class="cb-video"><video controls preload="metadata"><source src="videos/chef-ben-video-5.mp4" type="video/mp4"></video><div><strong>Chef Ben Video 5</strong></div></div>
+</div>
+</div>
+</section>
+
+<section id="book-chef-ben" class="cb-booking">
+<div class="cb-container">
+<div class="cb-title">
+<h2>Book Chef Ben</h2>
+<p>Send your enquiry directly to Chef Ben on WhatsApp.</p>
+</div>
+<form class="cb-form" id="chefBenBooking">
+<div class="cb-grid">
+<div class="cb-group"><label>Full Name *</label><input id="cbName" required></div>
+<div class="cb-group"><label>Phone / WhatsApp *</label><input id="cbPhone" required></div>
+<div class="cb-group"><label>Email</label><input id="cbEmail" type="email"></div>
+<div class="cb-group"><label>Event Date</label><input id="cbDate" type="date"></div>
+<div class="cb-group"><label>Service Required</label><select id="cbService"><option>Private Chef</option><option>Event Catering</option><option>Wedding Catering</option><option>Corporate / Team Event</option><option>Private Dinner</option><option>Other</option></select></div>
+<div class="cb-group"><label>Number of Guests</label><input id="cbGuests" type="number" min="1"></div>
+<div class="cb-group cb-full"><label>Event Location</label><input id="cbLocation"></div>
+<div class="cb-group cb-full"><label>Event Details</label><textarea id="cbDetails"></textarea></div>
+</div>
+<button class="cb-submit" type="submit">Send Booking Enquiry on WhatsApp</button>
+</form>
+</div>
+</section>
+
+</div>
+
+<div class="cb-ai" id="cbAi">
+<div class="cb-ai-box" id="cbAiBox">
+<div class="cb-ai-head">Chef Ben Assistant</div>
+<div class="cb-ai-msg" id="cbAiMsg"><div class="cb-msg cb-bot">Hello! I'm Chef Ben's website assistant. Ask me about private chef services, catering, bookings or the KTN feature.</div></div>
+<div class="cb-ai-input"><input id="cbAiInput" placeholder="Ask Chef Ben..."><button id="cbAiSend">Send</button></div>
+</div>
+<button class="cb-ai-toggle" id="cbAiToggle">Ask Chef Ben</button>
+</div>
+
+<script>
+(function(){
+const wa="254729582460";
+const form=document.getElementById("chefBenBooking");
+if(form){form.addEventListener("submit",function(e){e.preventDefault();const n=document.getElementById("cbName").value,p=document.getElementById("cbPhone").value,e1=document.getElementById("cbEmail").value,d=document.getElementById("cbDate").value,s=document.getElementById("cbService").value,g=document.getElementById("cbGuests").value,l=document.getElementById("cbLocation").value,x=document.getElementById("cbDetails").value;const msg=`Hello Chef Ben, I would like to make a booking enquiry.%0A%0AName: ${encodeURIComponent(n)}%0APhone: ${encodeURIComponent(p)}%0AEmail: ${encodeURIComponent(e1)}%0AEvent Date: ${encodeURIComponent(d)}%0AService: ${encodeURIComponent(s)}%0AGuests: ${encodeURIComponent(g)}%0ALocation: ${encodeURIComponent(l)}%0ADetails: ${encodeURIComponent(x)}`;window.open("https://wa.me/"+wa+"?text="+msg,"_blank")})}
+const toggle=document.getElementById("cbAiToggle"),box=document.getElementById("cbAiBox"),input=document.getElementById("cbAiInput"),send=document.getElementById("cbAiSend"),messages=document.getElementById("cbAiMsg");
+if(toggle)toggle.onclick=()=>{box.style.display=box.style.display==="block"?"none":"block";};
+function answer(q){q=q.toLowerCase();if(q.includes("private chef"))return"Chef Ben offers private chef services for homes, Airbnb stays, private dinners and special occasions.";if(q.includes("catering")||q.includes("wedding")||q.includes("event"))return"Chef Ben provides catering for events, weddings, corporate functions and private occasions.";if(q.includes("book")||q.includes("booking"))return"Use the Book Chef Ben form on this website to send your enquiry directly to Chef Ben on WhatsApp.";if(q.includes("ktn")||q.includes("pika"))return"Chef Ben has been featured on KTN's Pika.";if(q.includes("price")||q.includes("cost"))return"For current pricing, please send a booking enquiry with your event details so Chef Ben can provide the appropriate quotation.";return"I can help with Chef Ben's private chef services, catering, bookings and KTN feature. Please ask me about one of these."}
+function sendMsg(){const q=input.value.trim();if(!q)return;messages.innerHTML+=`<div class="cb-msg cb-user">${q.replace(/</g,"&lt;")}</div>`;messages.innerHTML+=`<div class="cb-msg cb-bot">${answer(q)}</div>`;input.value="";messages.scrollTop=messages.scrollHeight}
+if(send)send.onclick=sendMsg;if(input)input.addEventListener("keydown",e=>{if(e.key==="Enter")sendMsg()});
+})();
+</script>
+<!-- CHEF BEN UPGRADE END --></body>
 </html>
+
 
 
 
