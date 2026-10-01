@@ -1,4 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
-Sitemap: https://chefbenkenya.com/sitemap.xml
+Sitemap: https://chefben.co.ke/sitemap.xml
